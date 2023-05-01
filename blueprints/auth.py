@@ -56,6 +56,7 @@ def register():
             print(form.errors)
             return redirect(url_for("auth.register"))
 
+
 @bp.route("/logout")
 def logout():
     session.clear()
@@ -85,3 +86,5 @@ def mail_test():
     message = Message(subject="mailbox test", recipients=["lexi.zsh@gmail.com "], body="this is a test message!!")
     mail.send(message)
     return "mail sent successfully!!"
+# ngrok http 8000
+# flask run -p 8000

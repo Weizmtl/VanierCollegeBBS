@@ -5,8 +5,12 @@ from models import UserModel
 from blueprints.qa import bp as qa_bp
 from blueprints.auth import bp as auth_bp
 from flask_migrate import Migrate
+from flask_ngrok import run_with_ngrok
 
 app = Flask(__name__)
+
+run_with_ngrok(app)
+
 app.config.from_object(config)
 
 db.init_app(app)

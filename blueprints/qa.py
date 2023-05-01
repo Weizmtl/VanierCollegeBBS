@@ -53,7 +53,7 @@ def public_answer():
         return redirect(url_for("qa.qa_detail", qa_id=question_id))
     else:
         print(form.errors)
-        return redirect(url_for("qa.qa_detail", qa_id=request.form.get("question+id")))
+        return redirect(url_for("qa.qa_detail", qa_id=request.form.get("question_id")))
 
 
 @bp.route("/search")

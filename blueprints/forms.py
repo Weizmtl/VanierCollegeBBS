@@ -33,14 +33,14 @@ class RegisterForm(wtforms.Form):
 
 class LoginForm(wtforms.Form):
     email = wtforms.StringField(validators=[Email(message="Email format is incorrect!!")])
-    password = wtforms.StringField(validators=[Length(min=6, max=20, message="Password format is incorrect!!")])
+    password = wtforms.StringField(validators=[Length(min=1, max=20, message="Password format is incorrect!!")])
 
 
 class QuestionForm(wtforms.Form):
-    title = wtforms.StringField(validators=[Length(min=10, max=300, message="Title format is incorrect!!")])
-    content = wtforms.StringField(validators=[Length(min=10, message="context format is incorrect!!")])
+    title = wtforms.StringField(validators=[Length(min=1, max=300, message="Title format is incorrect!!")])
+    content = wtforms.StringField(validators=[Length(min=1, message="context format is incorrect!!")])
 
 
 class AnswerForm(wtforms.Form):
-    content = wtforms.StringField(validators=[Length(min=10, message="context format is incorrect!!")])
+    content = wtforms.StringField(validators=[Length(min=1, message="context format is incorrect!!")])
     question_id = wtforms.IntegerField(validators=[InputRequired(message="have to input question_id")])
